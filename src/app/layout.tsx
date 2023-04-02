@@ -1,7 +1,8 @@
 import { Nanum_Gothic } from 'next/font/google';
-import './globals.css';
-import { BLOG_TITLE } from '@/constants/common';
+import TanstackQueryProvider from '@/contexts/TanstackQueryProvider';
 import Header from '@/components/common/Header';
+import { BLOG_TITLE } from '@/constants/common';
+import './globals.css';
 
 const gothic = Nanum_Gothic({
   weight: '400',
@@ -21,13 +22,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={gothic.className}>
       <body>
-        <Header />
-        <section
-          className="flex flex-col w-full max-w-screen-xl mx-auto
+        <TanstackQueryProvider>
+          <Header />
+          <section
+            className="flex flex-col w-full max-w-screen-xl mx-auto
        max-w-2 py-4"
-        >
-          {children}
-        </section>
+          >
+            {children}
+          </section>
+        </TanstackQueryProvider>
       </body>
     </html>
   );
