@@ -1,5 +1,11 @@
+import Profile from '@/components/about/Profile';
+
 const AboutPage = () => {
-  return <div>AboutPage</div>;
+  return (
+    <section>
+      <Profile />
+    </section>
+  );
 };
 
 export default AboutPage;
