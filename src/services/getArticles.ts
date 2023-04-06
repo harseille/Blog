@@ -7,7 +7,7 @@ const getItem = async () => {
   const notionClient = new Client({ auth: notionKey });
 
   const response = await notionClient.databases.query({
-    database_id: databaseKey,
+    database_id: databaseKey!,
   });
   return response;
 };
